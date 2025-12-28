@@ -1,3 +1,6 @@
 src/sarah_implementation/venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
