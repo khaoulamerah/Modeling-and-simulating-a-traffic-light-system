@@ -1,0 +1,47 @@
+{
+  "theorique": {
+    "voie_a": {
+      "lambda": 0.3,
+      "mu": 0.39473684210526316,
+      "rho": 0.76,
+      "est_stable": true,
+      "L": 3.166666666666667,
+      "W": 10.555555555555554,
+      "L_q": 2.4066666666666667,
+      "W_q": 8.02222222222222,
+      "verif_little": true
+    },
+    "voie_b": {
+      "lambda": 0.3,
+      "mu": 0.32894736842105265,
+      "rho": 0.9119999999999999,
+      "est_stable": true,
+      "L": 10.363636363636354,
+      "W": 34.545454545454504,
+      "L_q": 9.451636363636354,
+      "W_q": 31.505454545454505,
+      "verif_little": true
+    }
+  },
+  "empirique": {
+    "voie_a": {
+      "temps_attente_moyen": 10.37955090155917,
+      "vehicules_total": 71,
+      "vehicules_servis": 61,
+      "longueur_file": 10
+    },
+    "voie_b": {
+      "temps_attente_moyen": 16.723054336599358,
+      "vehicules_total": 60,
+      "vehicules_servis": 60,
+      "longueur_file": 0
+    },
+    "feux": {
+      "nombre_cycles": 2,
+      "duree_cycle": 76.0,
+      "proportion_vert_a": 0.39473684210526316,
+      "proportion_vert_b": 0.32894736842105265,
+      "temps_simulation": 200.0
+    }
+  }
+}
