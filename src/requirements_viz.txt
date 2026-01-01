@@ -1,0 +1,4 @@
+pygame==2.5.2               # Pour l'interface graphique (GUI) et l'animation
+numpy>=1.26.0               # utilisé dans la simulation et les graphiques
+matplotlib>=3.8.0           # Pour générer les graphiques comparatifs (graphiques_comparatifs.py)
+simpy>=4.0.0                # Pour la simulation discrète  - obligatoire pour feux.py et intersection.py

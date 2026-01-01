@@ -3,7 +3,7 @@ STATISTIQUES.PY - Collecte des données brutes pour Tasnim
 Responsable : Sarah
 Projet : Simulation de Feux de Circulation
 
-⚠️ CE MODULE COLLECTE SEULEMENT LES DONNÉES
+  CE MODULE COLLECTE SEULEMENT LES DONNÉES
    L'analyse et visualisation = travail de Tasnim
 """
 
@@ -86,7 +86,7 @@ class CollecteurDonnees:
     """
     Collecte les données brutes de simulation
     
-    ⚠️ PAS D'ANALYSE ICI - juste collecter et sauvegarder
+     PAS D'ANALYSE ICI - juste collecter et sauvegarder
        Tasnim va lire ces JSON pour faire ses graphiques
     """
     
@@ -163,13 +163,13 @@ class CollecteurDonnees:
         with open(nom_fichier, 'w', encoding='utf-8') as f:
             json.dump(self.donnees, f, indent=2, ensure_ascii=False)
         
-        print(f"✅ Données sauvegardées : {nom_fichier}")
+        print(f" Données sauvegardées : {nom_fichier}")
         print(f"   → Tasnim peut maintenant générer les graphiques")
 
 
 # Test unitaire
 if __name__ == "__main__":
-    print("🧪 Test du module statistiques.py")
+    print(" Test du module statistiques.py")
     print("=" * 50)
     
     # Test calcul théorique
@@ -201,4 +201,4 @@ if __name__ == "__main__":
     # Sauvegarder
     collecteur.sauvegarder('../results/test.json')
     
-    print("\n✅ Module opérationnel !")
+    print("\n Module opérationnel !")

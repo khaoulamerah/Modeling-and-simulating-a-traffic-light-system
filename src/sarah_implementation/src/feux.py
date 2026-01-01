@@ -146,7 +146,7 @@ class SystemeFeux:
 
 # Unit test of the module
 if __name__ == "__main__":
-    print("🧪 Test of the module feux.py")
+    print(" Test of the module feux.py")
     print("=" * 50)
     
     # Create test environment
@@ -175,8 +175,8 @@ if __name__ == "__main__":
     
     # Display statistics
     stats = systeme.obtenir_statistiques()
-    print(f"\n📊 Statistics after {duree_test}s:")
+    print(f"\n Statistics after {duree_test}s:")
     print(f"  - Completed cycles: {stats['nombre_cycles']}")
     print(f"  - Simulation time: {stats['temps_simulation']:.2f}s")
     
-    print("\n✅ Module feux.py operational!")
+    print("\n Module feux.py operational!")

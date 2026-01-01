@@ -41,11 +41,11 @@ def executer_simulation(
     
     if not mode_silencieux:
         print("\n" + "═" * 70)
-        print("🚦 DÉMARRAGE DE LA SIMULATION")
+        print(" DÉMARRAGE DE LA SIMULATION")
         print("═" * 70)
-        print(f"📏 Durée : {duree_simulation} secondes")
-        print(f"🚗 Voie A : λ = {lambda_a} véh/s")
-        print(f"🚙 Voie B : λ = {lambda_b} véh/s")
+        print(f" Durée : {duree_simulation} secondes")
+        print(f" Voie A : λ = {lambda_a} véh/s")
+        print(f" Voie B : λ = {lambda_b} véh/s")
     
     # Configuration par défaut si aucune n'est fournie
     if config_feux is None:
@@ -60,14 +60,14 @@ def executer_simulation(
     rho_b = lambda_b / mu_b if mu_b > 0 else float('inf')
     
     if not mode_silencieux:
-        print(f"\n📊 Analyse de stabilité :")
+        print(f"\n Analyse de stabilité :")
         print(f"   Voie A → μ = {mu_a:.3f} véh/s → ρ = {rho_a:.3f} {'✅ Stable' if rho_a < 1 else '❌ Instable'}")
         print(f"   Voie B → μ = {mu_b:.3f} véh/s → ρ = {rho_b:.3f} {'✅ Stable' if rho_b < 1 else '❌ Instable'}")
         if rho_a >= 1 or rho_b >= 1:
-            print("   ⚠️  ATTENTION : Au moins une voie est instable → files infinies possibles !")
+            print("     ATTENTION : Au moins une voie est instable → files infinies possibles !")
     
     if not mode_silencieux:
-        print(f"\n🚀 Lancement de la simulation...\n")
+        print(f"\n Lancement de la simulation...\n")
     
     # Environnement SimPy
     env = simpy.Environment()
@@ -86,7 +86,7 @@ def executer_simulation(
     env.run(until=duree_simulation)
     
     if not mode_silencieux:
-        print(f"✅ Simulation terminée en {duree_simulation} secondes !\n")
+        print(f"Simulation terminée en {duree_simulation} secondes !\n")
     
     # Collecte des données
     collecteur = CollecteurDonnees()
@@ -135,9 +135,9 @@ def executer_3_scenarios():
     Exécute les 3 scénarios définis par Khaoula dans son rapport
     → Génère 3 fichiers JSON dans ../results/ pour Tasnim
     """
-    print("\n" + "🎯 " * 30)
+    print("\n" + "- " * 30)
     print("     EXÉCUTION DES 3 SCÉNARIOS DE RÉFÉRENCE")
-    print("🎯 " * 30 + "\n")
+    print("- " * 30 + "\n")
     
     scenarios = [
         {
@@ -170,7 +170,7 @@ def executer_3_scenarios():
     ]
     
     for i, sc in enumerate(scenarios, 1):
-        print(f"📌 {sc['titre']} (Scénario {i}/3)")
+        print(f" {sc['titre']} (Scénario {i}/3)")
         config = ConfigurationFeux(
             duree_vert_a=sc["T_A"],
             duree_vert_b=sc["T_B"],
@@ -186,24 +186,23 @@ def executer_3_scenarios():
         )
         print()
     
-    print("🎉" * 30)
+    print("-" * 30)
     print("TOUS LES SCÉNARIOS SONT TERMINÉS !")
     print("3 fichiers JSON ont été générés dans ../results/")
     print("→ Tasnim peut maintenant lancer graphiques_comparatifs.py")
-    print("🎉" * 30)
+    print("-" * 30)
 
 
 if __name__ == "__main__":
     print("""
     ╔═══════════════════════════════════════════════════════════════╗
     ║                                                               ║
-    ║           🚦 SIMULATION DE FEUX DE CIRCULATION 🚦           ║
+    ║            SIMULATION DE FEUX DE CIRCULATION                  ║
     ║                                                               ║
     ║        Responsable implémentation : Sarah                     ║
     ║        Modélisation mathématique : Khaoula                    ║
     ║        Visualisation & Analyse   : Tasnim                     ║
-    ║                                                               ║
-    ║        Université 08 Mai 1945 - Guelma                         ║
+    ║                                                               ║                         ║
     ║                                                               ║
     ╚═══════════════════════════════════════════════════════════════╝
     """)
@@ -216,7 +215,7 @@ if __name__ == "__main__":
     choix = input("\n🔸 Votre choix (1/2/3) : ").strip()
     
     if choix == "1":
-        print("\n🚀 Lancement d'une simulation de test...")
+        print("\n Lancement d'une simulation de test...")
         executer_simulation(
             duree_simulation=300,
             lambda_a=0.3,
@@ -228,9 +227,9 @@ if __name__ == "__main__":
         executer_3_scenarios()
     
     elif choix == "3":
-        print("\n👋 Merci et à bientôt !")
+        print("\n Merci et à bientôt !")
     
     else:
-        print("\n❌ Choix invalide. Au revoir !")
+        print("\n Choix invalide. Au revoir !")
     
-    print("\n✅ Programme terminé.\n")
+    print("\n Programme terminé.\n")

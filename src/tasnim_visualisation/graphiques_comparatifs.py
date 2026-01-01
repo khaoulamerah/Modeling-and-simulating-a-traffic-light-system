@@ -1,8 +1,6 @@
 """
 GRAPHIQUES_COMPARATIFS.PY
-Script standalone pour générer tous les graphiques
 Responsable : Tasnim
-Projet : Simulation Feux de Circulation
 """
 
 import json
@@ -54,7 +52,7 @@ def graphique_temps_attente(donnees, scenarios_labels):
     ax.grid(axis='y', alpha=0.3, linestyle='--')
     plt.tight_layout()
     plt.savefig('figures/comparaison_temps_attente.png', dpi=300, bbox_inches='tight')
-    print("✅ Graphique 1 créé : comparaison_temps_attente.png")
+    print(" Graphique 1 créé : comparaison_temps_attente.png")
     plt.close()
 
 def graphique_taux_utilisation(donnees, scenarios_labels):
@@ -89,7 +87,7 @@ def graphique_taux_utilisation(donnees, scenarios_labels):
     ax.grid(axis='y', alpha=0.3, linestyle='--')
     plt.tight_layout()
     plt.savefig('figures/comparaison_taux_utilisation.png', dpi=300, bbox_inches='tight')
-    print("✅ Graphique 2 créé : comparaison_taux_utilisation.png")
+    print(" Graphique 2 créé : comparaison_taux_utilisation.png")
     plt.close()
 
 def graphique_theorie_vs_simulation(donnees):
@@ -124,7 +122,7 @@ def graphique_theorie_vs_simulation(donnees):
     ax.grid(axis='y', alpha=0.3, linestyle='--')
     plt.tight_layout()
     plt.savefig('figures/theorie_vs_simulation.png', dpi=300, bbox_inches='tight')
-    print("✅ Graphique 3 créé : theorie_vs_simulation.png")
+    print(" Graphique 3 créé : theorie_vs_simulation.png")
     plt.close()
 
 def graphique_vehicules_servis(donnees, scenarios_labels):
@@ -157,23 +155,23 @@ def graphique_vehicules_servis(donnees, scenarios_labels):
     ax.grid(axis='y', alpha=0.3, linestyle='--')
     plt.tight_layout()
     plt.savefig('figures/vehicules_servis.png', dpi=300, bbox_inches='tight')
-    print("✅ Graphique 4 créé : vehicules_servis.png")
+    print(" Graphique 4 créé : vehicules_servis.png")
     plt.close()
 
 def main():
     print("\n" + "="*60)
-    print("🎨 GÉNÉRATION DES GRAPHIQUES COMPARATIFS")
+    print(" GÉNÉRATION DES GRAPHIQUES COMPARATIFS")
     print("="*60 + "\n")
     
     # Créer dossier
     creer_dossier_figures()
     
     # Charger les scénarios
-    print("📂 Chargement des données...")
+    print(" Chargement des données...")
     s1 = charger_scenario('../sarah_implementation/results/scenario1_trafic_leger.json')
     s2 = charger_scenario('../sarah_implementation/results/scenario2_asymetrique.json')
     s3 = charger_scenario('../sarah_implementation/results/scenario3_optimise.json')
-    print("✅ Données chargées\n")
+    print(" Données chargées\n")
     
     # Extraire
     donnees = []
@@ -195,14 +193,14 @@ def main():
     scenarios_labels = [d['nom'] for d in donnees]
     
     # Créer les graphiques
-    print("🎨 Création des graphiques...\n")
+    print(" Création des graphiques...\n")
     graphique_temps_attente(donnees, scenarios_labels)
     graphique_taux_utilisation(donnees, scenarios_labels)
     graphique_theorie_vs_simulation(donnees)
     graphique_vehicules_servis(donnees, scenarios_labels)
     
     print("\n" + "="*60)
-    print("🎉 TERMINÉ ! Tous les graphiques sont dans figures/")
+    print(" TERMINÉ ! Tous les graphiques sont dans figures/")
     print("="*60 + "\n")
 
 if __name__ == "__main__":

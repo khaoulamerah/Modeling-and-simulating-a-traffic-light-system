@@ -1,0 +1,82 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Définitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Titre -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">
+    Automate Fini - Système de Feux de Circulation
+  </text>
+  
+  <!-- S1: Voie A Verte -->
+  <circle cx="150" cy="150" r="50" fill="#4ade80" stroke="#333" stroke-width="3"/>
+  <text x="150" y="145" text-anchor="middle" font-size="14" font-weight="bold">S1</text>
+  <text x="150" y="160" text-anchor="middle" font-size="11">Voie A Vert</text>
+  <text x="150" y="100" text-anchor="middle" font-size="10" fill="#666">(A:🟢 B:🔴 P:🔴)</text>
+  
+  <!-- Flèche d'entrée vers S1 -->
+  <line x1="80" y1="150" x2="95" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="70" y="145" text-anchor="end" font-size="12" fill="#666">Début</text>
+  
+  <!-- S2: Voie A Jaune -->
+  <circle cx="400" cy="150" r="50" fill="#fbbf24" stroke="#333" stroke-width="3"/>
+  <text x="400" y="145" text-anchor="middle" font-size="14" font-weight="bold">S2</text>
+  <text x="400" y="160" text-anchor="middle" font-size="11">Voie A Jaune</text>
+  <text x="400" y="100" text-anchor="middle" font-size="10" fill="#666">(A:🟡 B:🔴 P:🔴)</text>
+  
+  <!-- Transition S1 → S2 -->
+  <line x1="200" y1="150" x2="345" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="140" text-anchor="middle" font-size="11" fill="#d97706">T_A = 30s</text>
+  
+  <!-- S3: Voie B Verte -->
+  <circle cx="650" cy="150" r="50" fill="#4ade80" stroke="#333" stroke-width="3"/>
+  <text x="650" y="145" text-anchor="middle" font-size="14" font-weight="bold">S3</text>
+  <text x="650" y="160" text-anchor="middle" font-size="11">Voie B Vert</text>
+  <text x="650" y="100" text-anchor="middle" font-size="10" fill="#666">(A:🔴 B:🟢 P:🔴)</text>
+  
+  <!-- Transition S2 → S3 -->
+  <line x1="450" y1="150" x2="595" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="525" y="140" text-anchor="middle" font-size="11" fill="#d97706">T_jaune = 3s</text>
+  
+  <!-- S4: Voie B Jaune -->
+  <circle cx="650" cy="350" r="50" fill="#fbbf24" stroke="#333" stroke-width="3"/>
+  <text x="650" y="345" text-anchor="middle" font-size="14" font-weight="bold">S4</text>
+  <text x="650" y="360" text-anchor="middle" font-size="11">Voie B Jaune</text>
+  <text x="650" y="400" text-anchor="middle" font-size="10" fill="#666">(A:🔴 B:🟡 P:🔴)</text>
+  
+  <!-- Transition S3 → S4 -->
+  <line x1="650" y1="200" x2="650" y2="295" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="680" y="250" text-anchor="start" font-size="11" fill="#d97706">T_B = 25s</text>
+  
+  <!-- S5: Phase Piétons -->
+  <circle cx="400" cy="450" r="50" fill="#60a5fa" stroke="#333" stroke-width="3"/>
+  <text x="400" y="445" text-anchor="middle" font-size="14" font-weight="bold">S5</text>
+  <text x="400" y="460" text-anchor="middle" font-size="11">Phase Piétons</text>
+  <text x="400" y="500" text-anchor="middle" font-size="10" fill="#666">(A:🔴 B:🔴 P:🟢)</text>
+  
+  <!-- Transition S4 → S5 -->
+  <line x1="605" y1="370" x2="455" y2="430" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="390" text-anchor="middle" font-size="11" fill="#d97706">T_jaune = 3s</text>
+  
+  <!-- Transition S5 → S1 (retour) -->
+  <path d="M 350 450 Q 150 550 150 200" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="220" y="530" text-anchor="middle" font-size="11" fill="#d97706">T_piétons = 15s</text>
+  
+  <!-- Légende -->
+  <rect x="20" y="480" width="200" height="100" fill="#f3f4f6" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="30" y="500" font-size="12" font-weight="bold">Légende:</text>
+  <text x="30" y="520" font-size="10">• État = Configuration des feux</text>
+  <text x="30" y="535" font-size="10">• Transition = Changement après durée</text>
+  <text x="30" y="550" font-size="10">• Cycle complet = 76 secondes</text>
+  <text x="30" y="565" font-size="10">  (30+3+25+3+15)</text>
+  
+  <!-- Note sur le cycle -->
+  <rect x="550" y="480" width="230" height="80" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="5"/>
+  <text x="665" y="500" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">⚠️ PROPRIÉTÉS</text>
+  <text x="560" y="520" font-size="10" fill="#92400e">• Système cyclique (retour à S1)</text>
+  <text x="560" y="535" font-size="10" fill="#92400e">• Déterministe (durées fixes)</text>
+  <text x="560" y="550" font-size="10" fill="#92400e">• 5 états, 5 transitions</text>
+</svg>

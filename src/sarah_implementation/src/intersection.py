@@ -203,7 +203,7 @@ class Intersection:
 
 # Test unitaire du module
 if __name__ == "__main__":
-    print("🧪 Test du module intersection.py")
+    print(" Test du module intersection.py")
     print("=" * 50)
     
     from feux import SystemeFeux, ConfigurationFeux
@@ -235,9 +235,9 @@ if __name__ == "__main__":
     
     # Afficher statistiques
     stats = intersection.obtenir_statistiques()
-    print(f"\n📊 Statistiques Voie A :")
+    print(f"\n Statistiques Voie A :")
     print(f"  - Véhicules total : {stats['voie_a']['vehicules_total']}")
     print(f"  - Véhicules servis : {stats['voie_a']['vehicules_servis']}")
     print(f"  - Temps attente moyen : {stats['voie_a']['temps_attente_moyen']:.2f}s")
     
-    print("\n✅ Module intersection.py opérationnel !")
+    print("\n Module intersection.py opérationnel !")
