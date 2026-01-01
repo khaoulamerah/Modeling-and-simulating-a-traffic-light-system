@@ -1,0 +1,82 @@
+{
+  "parametres": {
+    "lambda_a": 0.4,
+    "mu_a": 0.49382716049382713,
+    "lambda_b": 0.4,
+    "mu_b": 0.24691358024691357,
+    "duree_simulation": 600,
+    "config_feux": {
+      "T_A": 40,
+      "T_B": 20,
+      "T_jaune": 3.0,
+      "T_pietons": 15,
+      "T_cycle": 81.0
+    }
+  },
+  "theorique": {
+    "voie_a": {
+      "lambda": 0.4,
+      "mu": 0.49382716049382713,
+      "rho": 0.81,
+      "est_stable": true,
+      "L": 4.263157894736843,
+      "W": 10.657894736842112,
+      "L_q": 3.4531578947368438,
+      "W_q": 8.632894736842111
+    },
+    "voie_b": {
+      "lambda": 0.4,
+      "mu": 0.24691358024691357,
+      "rho": 1.62,
+      "est_stable": false,
+      "L": null,
+      "W": null,
+      "L_q": null,
+      "W_q": null
+    }
+  },
+  "empirique": {
+    "voie_a": {
+      "vehicules_total": 218,
+      "vehicules_servis": 218,
+      "temps_attente_moyen": 9.049178238141902,
+      "longueur_file_actuelle": 0
+    },
+    "voie_b": {
+      "vehicules_total": 228,
+      "vehicules_servis": 208,
+      "temps_attente_moyen": 21.30169484153178,
+      "longueur_file_actuelle": 20
+    },
+    "generateur": {
+      "voie_a": {
+        "nombre_total": 218,
+        "nombre_servis": 218,
+        "temps_attente_moyen": 9.0491782381419,
+        "temps_attente_max": 39.308520624476415,
+        "temps_attente_std": 12.297940658368095
+      },
+      "voie_b": {
+        "nombre_total": 228,
+        "nombre_servis": 208,
+        "temps_attente_moyen": 21.301694841531777,
+        "temps_attente_max": 59.15995712110934,
+        "temps_attente_std": 19.297249489397093
+      }
+    },
+    "feux": {
+      "nombre_cycles": 7,
+      "duree_cycle": 81.0,
+      "proportion_vert_a": 0.49382716049382713,
+      "proportion_vert_b": 0.24691358024691357,
+      "temps_simulation": 600
+    }
+  },
+  "historique": {
+    "longueurs_files": {
+      "voie_a": [],
+      "voie_b": []
+    },
+    "changements_feux": []
+  }
+}
