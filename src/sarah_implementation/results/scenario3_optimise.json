@@ -1,0 +1,82 @@
+{
+  "parametres": {
+    "lambda_a": 0.3,
+    "mu_a": 0.3684210526315789,
+    "lambda_b": 0.3,
+    "mu_b": 0.3684210526315789,
+    "duree_simulation": 600,
+    "config_feux": {
+      "T_A": 28,
+      "T_B": 28,
+      "T_jaune": 3.0,
+      "T_pietons": 14,
+      "T_cycle": 76.0
+    }
+  },
+  "theorique": {
+    "voie_a": {
+      "lambda": 0.3,
+      "mu": 0.3684210526315789,
+      "rho": 0.8142857142857143,
+      "est_stable": true,
+      "L": 4.384615384615384,
+      "W": 14.615384615384617,
+      "L_q": 3.57032967032967,
+      "W_q": 11.901098901098903
+    },
+    "voie_b": {
+      "lambda": 0.3,
+      "mu": 0.3684210526315789,
+      "rho": 0.8142857142857143,
+      "est_stable": true,
+      "L": 4.384615384615384,
+      "W": 14.615384615384617,
+      "L_q": 3.57032967032967,
+      "W_q": 11.901098901098903
+    }
+  },
+  "empirique": {
+    "voie_a": {
+      "vehicules_total": 200,
+      "vehicules_servis": 188,
+      "temps_attente_moyen": 15.315085447192107,
+      "longueur_file_actuelle": 12
+    },
+    "voie_b": {
+      "vehicules_total": 157,
+      "vehicules_servis": 156,
+      "temps_attente_moyen": 14.2000149529707,
+      "longueur_file_actuelle": 1
+    },
+    "generateur": {
+      "voie_a": {
+        "nombre_total": 200,
+        "nombre_servis": 188,
+        "temps_attente_moyen": 15.31508544719211,
+        "temps_attente_max": 46.126972956107124,
+        "temps_attente_std": 16.353878633879635
+      },
+      "voie_b": {
+        "nombre_total": 157,
+        "nombre_servis": 156,
+        "temps_attente_moyen": 14.200014952970704,
+        "temps_attente_max": 45.60833918422071,
+        "temps_attente_std": 14.75844749927355
+      }
+    },
+    "feux": {
+      "nombre_cycles": 7,
+      "duree_cycle": 76.0,
+      "proportion_vert_a": 0.3684210526315789,
+      "proportion_vert_b": 0.3684210526315789,
+      "temps_simulation": 600
+    }
+  },
+  "historique": {
+    "longueurs_files": {
+      "voie_a": [],
+      "voie_b": []
+    },
+    "changements_feux": []
+  }
+}
